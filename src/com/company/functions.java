@@ -3,6 +3,9 @@ package com.company;
 import java.util.Scanner;
 
 public class functions {
+    /**
+     * la fonction qui lancera tout le processus, il initialisera finalPrice pour le reste du process
+     */
     public static void sellProduct() {
         System.out.println("let's start");
         float finalPrice = twoReduction();
@@ -10,6 +13,11 @@ public class functions {
         giveCashBack(finalPrice);
     }
 
+    /**
+     * ici on calcule le prix après lui avoir appliqué les remises dans un ordre précis.
+     * Lorsque l'on tapera 50 en ligne de commande cela équivaudra à 50%
+     * @return - la fonction içi nous retourne le prix après remise.
+     */
     public static float twoReduction() {
         Scanner reduction = new Scanner(System.in);
         System.out.println("Veuillez entrez votre remise par ordre décroissant.");
@@ -28,6 +36,10 @@ public class functions {
         return resultingPrice;
     }
 
+    /**
+     * la fonction nous dispatch la monnaie en pièce et en billet.
+     * @param finalPrice le prix qui servira à déduire du billet de 20€
+     */
     public static void giveCashBack(float finalPrice) {
         Scanner giveMoney = new Scanner(System.in);
         System.out.println("Combien de billet de 20€ me donnez vous?");
